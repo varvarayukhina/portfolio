@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портфолио Варвары Юхиной</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F4F5F7; --surface:#FFFFFF; --surface-2:#EEEFF2;
+    --ink:#171A21; --ink-soft:#565B67; --ink-faint:#8A8F9A;
+    --line:#DCDFE5;
+    --accent:#A9591A; --accent-ink:#7A3F10; --accent-soft:#F0E1CE;
+    --live:#1E6B4F; --live-soft:#DCEDE4;
+    --serif:"Newsreader", Georgia, serif;
+    --sans:"IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14161C; --surface:#1B1E26; --surface-2:#20232C;
+      --ink:#ECEDF0; --ink-soft:#A9AEBB; --ink-faint:#727786;
+      --line:#2C3039;
+      --accent:#E39A4E; --accent-ink:#F0B577; --accent-soft:#3A2A17;
+      --live:#6FCFA4; --live-soft:#1B3A2C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161C; --surface:#1B1E26; --surface-2:#20232C;
+    --ink:#ECEDF0; --ink-soft:#A9AEBB; --ink-faint:#727786;
+    --line:#2C3039;
+    --accent:#E39A4E; --accent-ink:#F0B577; --accent-soft:#3A2A17;
+    --live:#6FCFA4; --live-soft:#1B3A2C;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    padding-inline:20px;
+  }
+  h1,h2,h3{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0;}
+  .page{max-width:760px; margin:0 auto; padding-block:40px 80px;}
+
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--accent-ink); font-weight:500;
+  }
+
+  .masthead{padding-bottom:26px; border-bottom:1px solid var(--line);}
+  .masthead h1{font-size:clamp(32px,7vw,44px); margin-top:10px; letter-spacing:-.01em;}
+  .role{margin:10px 0 0; color:var(--ink-soft); font-size:16.5px; max-width:58ch;}
+  .stats{display:flex; gap:28px; margin-top:22px; flex-wrap:wrap;}
+  .stat{display:flex; flex-direction:column; gap:2px;}
+  .stat .num{font-family:var(--mono); font-size:22px; font-weight:500; font-variant-numeric:tabular-nums;}
+  .stat .label{font-size:12.5px; color:var(--ink-faint);}
+
+  .toc{
+    display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none;
+    position:sticky; top:0; z-index:5;
+    background:var(--bg); padding-block:14px; border-bottom:1px solid var(--line);
+  }
+  .toc a{
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft);
+    text-decoration:none; padding:6px 12px; border:1px solid var(--line); border-radius:999px; white-space:nowrap;
+  }
+  .toc a:hover,.toc a:focus-visible{color:var(--accent-ink); border-color:var(--accent-soft); background:var(--accent-soft); outline:none;}
+
+  html{scroll-behavior:smooth;}
+  section{padding-top:44px; scroll-margin-top:64px;}
+  .section-head{margin-bottom:20px;}
+  .section-head h2{font-size:26px; margin-top:6px;}
+  .section-sub{margin:8px 0 0; color:var(--ink-soft); max-width:60ch; font-size:15px;}
+
+  .entries{list-style:none; margin:0; padding:0; border-top:1px solid var(--line);}
+  .entry{padding-block:20px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:8px;}
+
+  .entry-top{display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+  .entry-top h3{font-size:18.5px;}
+
+  .links{display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;}
+  .link-chip{
+    font-family:var(--mono); font-size:12.5px; color:var(--accent-ink); text-decoration:none;
+    border:1px solid var(--accent-soft); background:var(--accent-soft);
+    padding:4px 10px; border-radius:6px; white-space:nowrap;
+  }
+  .link-chip:hover,.link-chip:focus-visible{text-decoration:underline; outline:none;}
+  .link-chip.live{color:var(--live); border-color:var(--live-soft); background:var(--live-soft);}
+  .link-chip.muted{color:var(--ink-faint); border-color:var(--line); background:transparent;}
+
+  .entry-desc{margin:0; max-width:66ch; font-size:15px;}
+  .entry-meta{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:2px 0 0;}
+  .tag{
+    font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);
+    background:var(--surface-2); border-radius:4px; padding:2px 7px; white-space:nowrap;
+  }
+  .stat-inline{
+    font-family:var(--mono); font-size:11.5px; color:var(--ink-faint);
+    font-variant-numeric:tabular-nums; margin-left:auto; white-space:nowrap;
+  }
+  .entry-note{
+    margin:2px 0 0; font-size:13.5px; color:var(--ink-faint); max-width:66ch;
+    border-left:2px solid var(--line); padding-left:10px;
+  }
+
+  .proposal{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:18px 20px; margin-top:4px;
+  }
+  .proposal p{margin:0 0 10px; font-size:15px; max-width:64ch;}
+  .proposal ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .proposal li{margin:6px 0;}
+
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:12.5px;}
+
+  @media (max-width:480px){
+    .entry-top{flex-direction:column; align-items:flex-start;}
+    .stat-inline{margin-left:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">Обзор навыков · сентябрь 2026</div>
+    <h1>Варвара Юхина</h1>
+    <p class="role">Product manager НИПТ, «Геномед». По разделам — то, что делаю руками: код, вёрстка, аналитика. Все ссылки рабочие, открываются в браузере.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">3</span><span class="label">раздела</span></div>
+      <div class="stat"><span class="num">16</span><span class="label">рабочих ссылок</span></div>
+      <div class="stat"><span class="num">2</span><span class="label">на genomed.ru</span></div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#vibecoding">01 · Вайбкодинг</a>
+    <a href="#layout">02 · Вёрстка</a>
+    <a href="#analytics">03 · Аналитика</a>
+  </nav>
+
+  <!-- 01 -->
+  <section id="vibecoding">
+    <div class="section-head">
+      <span class="eyebrow">01 · Вайбкодинг</span>
+      <h2>Продукты, боты, автоматизация</h2>
+      <p class="section-sub">Пишу ТЗ и рабочий код с ИИ-ассистентом — от прототипа до продакшена с базой данных, деплоем и тестами.</p>
+    </div>
+    <ul class="entries">
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>EpiPrint — портал и заключения</h3>
+          <div class="links">
+            <a class="link-chip" href="https://varvarayukhina.github.io/ep-preview-9k4m2x/" target="_blank" rel="noopener">портал ↗</a>
+            <a class="link-chip" href="https://varvarayukhina.github.io/ep-preview-9k4m2x/report.html" target="_blank" rel="noopener">заключение ↗</a>
+          </div>
+        </div>
+        <p class="entry-desc">Написала ТЗ на портал для теста ранней мультираковой диагностики по метилированию cfDNA и собрала по нему рабочий прототип из 8 страниц: дашборд с мониторингом монтирований, хранилище с пакетным запуском, очередь пайплайна с автообновлением, реестр образцов с фильтрами, карточка образца с гейджем вероятности и хитмапом, контроль качества, сравнение наборов реагентики и само заключение.</p>
+        <p class="entry-meta">
+          <span class="tag">ТЗ на продукт</span>
+          <span class="tag">HTML/CSS/JS</span>
+          <span class="tag">24 демо-образца</span>
+          <span class="stat-inline">8 страниц · 4 варианта заключения</span>
+        </p>
+        <p class="entry-note">В ТЗ отдельно зафиксировано, чем портал проще OncoPulse: один пайплайн вместо многих панелей, врачей-интерпретаторов нет, результат целиком выдаёт ML-классификатор. Заключение сделано в логике Galleri и НИПТ — без «синеньких квадратиков», хитмапы остаются биоинформатику. Прототип на демо-данных: живого бэкенда и реальных образцов в нём нет. Само ТЗ не публиковала — ссылка только на интерфейс.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Лапсли</h3>
+          <div class="links"><a class="link-chip live" href="https://lapsli.ru" target="_blank" rel="noopener">lapsli.ru ↗</a></div>
+        </div>
+        <p class="entry-desc">PWA для владельцев собак в Петербурге: карта, кто гуляет рядом; трекер прогулок с упрощением GPS-маршрута; тепловая карта плотности собак по часам; чат района; публичная страница собаки, открывается без регистрации.</p>
+        <p class="entry-meta">
+          <span class="tag">React 18, без сборщика</span>
+          <span class="tag">PHP 8 + MySQL</span>
+          <span class="tag">PWA / push</span>
+          <span class="stat-inline">12 000+ строк · 28 таблиц</span>
+        </p>
+        <p class="entry-note">Провела инженерное ревью и закрыла 10 багов, блокировавших ключевые механики: фото не грузились вообще, push уходил не тем адресатам, 17 одобренных мест не выводились на карту. На проде честно: 7 пользователей, трафика пока нет.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Геномед-радар</h3>
+          <div class="links"><a class="link-chip" href="https://t.me/content_gmd_bot" target="_blank" rel="noopener">@content_gmd_bot ↗</a></div>
+        </div>
+        <p class="entry-desc">Бот для контент-плана: раз в день собирает свежие инфоповоды про генетику из бесплатных источников, отсекает повторы с прошлыми постами канала и присылает готовую карточку — заголовок, суть, ссылка на первоисточник, подсказка рубрики и промт для обложки.</p>
+        <p class="entry-meta">
+          <span class="tag">Python</span>
+          <span class="tag">RSS-парсинг</span>
+          <span class="tag">Telegram Bot API</span>
+          <span class="stat-inline">96 постов в базе анти-повтора</span>
+        </p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Скилл-система для контента «Геномед»</h3>
+          <div class="links"><span class="link-chip muted">внутренний инструмент</span></div>
+        </div>
+        <p class="entry-desc">7 переиспользуемых инструментов — под Телеграм, ВК, Инстаграм, Дзен, карусели, лендинги и месячный отчёт. Каждый не разовый текст, а настроенный пайплайн под фирменный тон конкретного канала: правила рубрик, структура, запреты, медицинская корректность.</p>
+        <p class="entry-meta"><span class="tag">Claude Code skills</span><span class="stat-inline">7 инструментов</span></p>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- 02 -->
+  <section id="layout">
+    <div class="section-head">
+      <span class="eyebrow">02 · Вёрстка</span>
+      <h2>Лендинги, брошюры, справочники</h2>
+      <p class="section-sub">Самодостаточные HTML/CSS-страницы в фирменном стиле. Две опубликованы на genomed.ru, остальные выложены отдельно, чтобы можно было открыть и посмотреть.</p>
+    </div>
+    <ul class="entries">
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Карьера в «Геномед»</h3>
+          <div class="links"><a class="link-chip live" href="https://genomed.ru/career" target="_blank" rel="noopener">genomed.ru/career ↗</a></div>
+        </div>
+        <p class="entry-desc">Страница вакансий и карьеры в лаборатории. Опубликована на боевом сайте.</p>
+        <p class="entry-meta"><span class="tag">HTML/CSS</span><span class="tag">SEO: sitemap, robots</span><span class="tag">адаптив</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Исследования по ОМС</h3>
+          <div class="links"><a class="link-chip live" href="https://genomed.ru/oms" target="_blank" rel="noopener">genomed.ru/oms ↗</a></div>
+        </div>
+        <p class="entry-desc">Страница исследований при онкологическом диагнозе по полису ОМС. Опубликована на боевом сайте. Сборка автоматизирована: скрипт собирает превью прямо из production-блока — превью физически не может разойтись с боевой версией.</p>
+        <p class="entry-meta"><span class="tag">HTML/CSS</span><span class="tag">автосборка</span><span class="stat-inline">2 094 строки · 78 тестов</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>ОСКАР — центр пренатальной диагностики</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/oscar-prenatal-landing/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">Лендинг центра пренатальной диагностики на базе «Геномед», с видео УЗИ.</p>
+        <p class="entry-meta"><span class="tag">HTML/CSS</span><span class="tag">видео</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>НИПТ — лендинг и прототип</h3>
+          <div class="links">
+            <a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/nipt/" target="_blank" rel="noopener">лендинг ↗</a>
+            <a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/nipt/prototip.html" target="_blank" rel="noopener">прототип ↗</a>
+          </div>
+        </div>
+        <p class="entry-desc">Лендинг основного продукта и отдельный кликабельный прототип с демо-подсказками — на нём можно обсуждать структуру страницы до вёрстки боевой версии.</p>
+        <p class="entry-meta"><span class="stat-inline">1 262 + 1 818 строк</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Справочник ДНК-тестов на родство</h3>
+          <div class="links">
+            <a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/rodstvo/" target="_blank" rel="noopener">справочник ↗</a>
+            <a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/rodstvo/catalog.html" target="_blank" rel="noopener">подбор теста ↗</a>
+          </div>
+        </div>
+        <p class="entry-desc">18 исследований карточками с допустимыми ролями участников, фильтр по тому, кто сдаёт образец, сравнение до трёх тестов, сводная таблица «кто с кем сдаёт». Плюс печатная памятка А4, готовая в типографию: вылеты 5 мм, схемы допустимых пар в генетической нотации.</p>
+        <p class="entry-meta"><span class="tag">HTML/CSS</span><span class="tag">фильтры и сравнение</span><span class="tag">print-ready PDF</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Семейный код</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/semeyniy-kod/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">Лендинг семейного генетического тестирования.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>EpiPrint — лендинг</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/epiprint/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">Лендинг эпигенетического теста. Портал и заключения по этому же продукту — в разделе «Вайбкодинг».</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Второе мнение по биопсии</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/biopsy-secondopinion/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">Лендинг услуги «второе мнение» по биопсии с молекулярным профилем.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Гос. тендеры и закупки</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/gos-tendery/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">B2B-страница для направления тендеров и госзакупок.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top">
+          <h3>Сертификат «Геноскоп»</h3>
+          <div class="links"><a class="link-chip" href="https://varvarayukhina.github.io/genomed-previews/genoskop-sertifikat/" target="_blank" rel="noopener">открыть ↗</a></div>
+        </div>
+        <p class="entry-desc">Самодостаточная страница сертификата — открывается без сервера, одним файлом.</p>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- 03 -->
+  <section id="analytics">
+    <div class="section-head">
+      <span class="eyebrow">03 · Аналитика</span>
+      <h2>Данные и научная база</h2>
+      <p class="section-sub">Научное образование, на которое опирается всё остальное, и то, что уже делаю с данными на работе.</p>
+    </div>
+    <ul class="entries">
+
+      <li class="entry">
+        <div class="entry-top"><h3>MSc Биоинформатика, СПбГУ</h3></div>
+        <p class="entry-desc">Защита июнь 2026, «отлично». Тема — фармакогеномные детерминанты токсичности химиотерапии при раке ЖКТ.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top"><h3>WES-пайплайн на 339 пациентах</h3></div>
+        <p class="entry-desc">23 бинарных фенотипа токсичности по CTCAE v5.0, 5 FDR-значимых локусов. Воспроизвела известный DPYD и нашла новый кандидат — сплайс-донор NPC2.</p>
+        <p class="entry-meta"><span class="tag">GATK4, BWA-MEM, SnpEff</span><span class="tag">Firth regression, SKAT-O</span><span class="tag">Python, R, Bash</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top"><h3>Яндекс.Метрика на новых страницах</h3></div>
+        <p class="entry-desc">Поставила счётчик на новые лендинги и настраивала цели, чтобы по страницам можно было считать конверсию, а не только просмотры. В превью-сборке ОМС счётчик специально вырезан, чтобы тестовые открытия не пачкали статистику боевого сайта.</p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top"><h3>Wet lab — НИИ им. Д. О. Отта РАН</h3></div>
+        <p class="entry-desc">2,5 года: NK-клетки под действием бактерий группы ESKAPE, грант РНФ.</p>
+        <p class="entry-meta"><span class="tag">проточная цитометрия</span><span class="tag">ELISA</span><span class="tag">Western blot</span><span class="tag">клеточные линии</span></p>
+      </li>
+
+      <li class="entry">
+        <div class="entry-top"><h3>Публикации</h3></div>
+        <p class="entry-desc">3 статьи вторым автором, Int. J. Mol. Sci., 2025. 4 устных доклада на конференциях.</p>
+      </li>
+    </ul>
+
+    <div class="section-head" style="margin-top:34px;">
+      <span class="eyebrow">Предложение, не сделанная работа</span>
+      <h2 style="font-size:21px;">Что можно забрать на себя дальше</h2>
+    </div>
+    <div class="proposal">
+      <p>Тот же подход, что в контент-радаре и сборщике отчётов, ложится на продуктовую аналитику НИПТ. Это ещё не сделано — это то, что готова поднять:</p>
+      <ul>
+        <li><strong>Воронка по продукту.</strong> Метрика на лендингах уже стоит — связать её с заявками и довести до цифры «сколько стоит одна заявка с каждой страницы», а не отдельных счётчиков просмотров.</li>
+        <li><strong>Еженедельная сводка ботом.</strong> Тот же механизм, что у радара: раз в неделю в Телеграм — заявки, источники, что выросло и что просело, без ручной выгрузки.</li>
+        <li><strong>Разбор отказов.</strong> Свести причины, по которым заявка не доходит до анализа, в один регулярный отчёт — сейчас это знание живёт в переписке.</li>
+        <li><strong>Мониторинг конкурентов по НИПТ.</strong> Цены и позиционирование — тот же парсер, что собирает инфоповоды, только по другому списку источников.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Собрано по рабочим файлам и репозиториям, сентябрь 2026. Черновые страницы выложены как превью, закрыты от индексации.</footer>
+
+</div>
+</body>
+</html>
